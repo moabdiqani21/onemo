@@ -1,0 +1,409 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | ONEMO Manufacturing Company</title>
+    <meta name="description"
+        content="Get in touch with ONEMO – Istanbul's premier brand brand. Reach out for collab requests, orders, and general inquiries.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
+    
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span class="logo-main">ONEMO</span>
+                <span class="logo-sub">Manufacturing Company</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="gallery">Gallery</a></li>
+                <li><a href="contact" class="active">Contact</a></li>
+                <li><a href="support">Support</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/">Home</a>
+        <a href="about">About</a>
+        <a href="gallery">Gallery</a>
+        <a href="contact">Contact</a>
+        <a href="support">Support</a>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="page-hero-bg"></div>
+        <div class="page-hero-content">
+            <p class="page-hero-eyebrow">Istanbul, Türkiye · We'd Love To Hear From You</p>
+            <h1 class="page-hero-title">CONTACT</h1>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-ticker">
+        <div class="marquee-track">
+            <span>GET IN TOUCH</span><span class="dot">◆</span>
+            <span>COLLABORATIONS</span><span class="dot">◆</span>
+            <span>ORDERS</span><span class="dot">◆</span>
+            <span>PRESS</span><span class="dot">◆</span>
+            <span>EVENTS</span><span class="dot">◆</span>
+            <span>ISTANBUL</span><span class="dot">◆</span>
+            <span>ONEMO</span><span class="dot">◆</span>
+        </div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section">
+        <div class="section-container">
+            <div class="contact-grid">
+
+                <!-- Left: Info -->
+                <div class="contact-info reveal-left">
+                    <p class="section-eyebrow">Reach Out</p>
+                    <h2 class="section-title">Let's <span class="outline-text">Talk</span></h2>
+                    <p>Whether you have a collab idea, a wholesale inquiry, a press request, or just want to say what's
+                        up — we're here. Hit us up and we'll get back to you within 24 hours.</p>
+
+                    <div class="contact-detail-list">
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-detail-text">
+                                <h4>Email</h4>
+                                <a href="mailto:Onemoclu6@gmail.com">Onemoclu6@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon"><i class="fas fa-phone"></i></div>
+                            <div class="contact-detail-text">
+                                <h4>Phone</h4>
+                                <a href="tel:+905527785851">+90 552 778 58 51</a>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-detail-text">
+                                <h4>Location</h4>
+                                <p>Istanbul, Turkey</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon"><i class="fas fa-clock"></i></div>
+                            <div class="contact-detail-text">
+                                <h4>Response Time</h4>
+                                <p>Within 24 Hours</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="contact-socials-heading">Follow Us</p>
+                    <div class="contact-socials">
+                        <a href="https://www.instagram.com/onemotextile?igsh=MW5yazVsczliZG1wcQ%3D%3D&utm_source=qr"
+                            target="_blank" class="contact-social-link" title="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="contact-form-wrapper reveal-right">
+                    <h3 class="form-title">SEND A MESSAGE</h3>
+                    <p class="form-subtitle">Fill out the form below and we'll be in touch soon.</p>
+
+                    <form id="contactForm" action="https://formsubmit.co/Onemoclu6@gmail.com" method="POST">
+                        <!-- FormSubmit config -->
+                        <input type="hidden" name="_subject" value="New ONEMO Contact Form Message">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://one-mo.vercel.app/contact">
+                        <input type="text" name="_honey" style="display:none">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="first_name" placeholder="Ahmet" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="last_name" placeholder="Yılmaz" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="ahmet@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject">
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="Techpack">Techpack Making &amp; Web Designing</option>
+                                <option value="Manufacturing">Sampling &amp; Manufacturing</option>
+                                <option value="Photoshoot">Creative direction &amp; premium photoshoot</option>
+                                <option value="Web Development">Brand &amp; Web Development</option>
+                                <option value="Shipping">Global Shipping</option>
+                                <option value="Collaboration">Collaboration / Collab Request</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us what's on your mind..."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit-btn"><span>SEND MESSAGE &nbsp; →</span></button>
+                    </form>
+
+                    <div class="form-success" id="formSuccess">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>MESSAGE SENT</h3>
+                        <p>We'll get back to you within 24 hours. Stay tuned.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP STRIP -->
+    <div class="map-strip">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192697.56847157614!2d28.872272!3d41.0053215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa7040068086b%3A0xe1ccfe98bc01b0d0!2sIstanbul%2C%20T%C3%BCrkiye!5e0!3m2!1sen!2str!4v1700000000000"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="ONEMO Istanbul Location">
+        </iframe>
+        <div class="map-overlay">
+            <div class="map-pin-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h4>ONEMO</h4>
+                <p>Istanbul, Türkiye</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="section-container">
+            <div style="text-align:center; margin-bottom: 60px;" class="reveal">
+                <p class="section-eyebrow" style="justify-content:center;">FAQ</p>
+                <h2 class="section-title">Common <span class="outline-text">Questions</span></h2>
+            </div>
+            <div class="faq-list">
+
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        Do you ship internationally?
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We ship worldwide. Shipping rates and delivery times vary by destination. Orders are
+                            dispatched from Istanbul, Türkiye within 2–3 business days.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        How do I know my size?
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>All our products run true to size unless stated otherwise. If you're between sizes, we
+                            recommend sizing up for an oversized brand fit. Contact us for sizing advice on
+                            specific pieces.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        How do I collaborate with ONEMO?
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We love collaborating with artists, photographers, musicians, and creatives. Fill out the
+                            contact form above and select "Collaboration" as your subject. Tell us about your vision!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        Do you offer wholesale or bulk orders?
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we accept wholesale inquiries for select products. Please contact us via the form or
+                            email us at Onemoclu6@gmail.com with "Wholesale" in the subject line.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        How can I stay updated on new drops?
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Follow us on Instagram @onemo and subscribe to our newsletter using the form at the bottom
+                            of any page. Subscribers get early access to drops before anyone else.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <div class="newsletter-section">
+        <div class="section-container">
+            <h2>JOIN THE MOVEMENT</h2>
+            <p>Be first to know about new drops, exclusive releases, and Istanbul events.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">JOIN</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo-main">ONEMO</div>
+                    <div class="logo-sub">Manufacturing Company</div>
+                    <p>Born and raised in Istanbul, ONEMO represents the raw energy of urban Türkiye.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/onemotextile?igsh=MW5yazVsczliZG1wcQ%3D%3D&utm_source=qr"
+                            class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="about">About Us</a></li>
+                        <li><a href="gallery">Gallery</a></li>
+                        <li><a href="contact">Contact</a></li>
+                        <li><a href="support">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="contact">Techpack Making &amp; Web Designing</a></li>
+                        <li><a href="contact">Sampling &amp; Manufacturing</a></li>
+                        <li><a href="contact">Creative direction &amp; premium photoshoot</a></li>
+                        <li><a href="contact">Brand &amp; Web Development</a></li>
+                        <li><a href="contact">Global Shipping</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Onemoclu6@gmail.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+90 552 778 58 51</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Istanbul, Turkey</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 ONEMO. All rights reserved. Istanbul, Türkiye.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Shipping</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // ---- FAQ Accordion ----
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+
+        // ---- AJAX Contact Form Submission ----
+        const contactForm = document.getElementById('contactForm');
+        const formSuccess = document.getElementById('formSuccess');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const submitBtn = contactForm.querySelector('.form-submit-btn');
+                const originalBtnText = submitBtn.innerHTML;
+
+                // Show loading state
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span>SENDING...</span>';
+
+                try {
+                    const formData = new FormData(contactForm);
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        contactForm.style.display = 'none';
+                        formSuccess.style.display = 'block';
+                        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Something went wrong. Please try again or email us directly at Onemoclu6@gmail.com');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnText;
+                }
+            });
+        }
+
+        // Show success if redirected back (fallback)
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('sent') === 'true') {
+            if (contactForm) contactForm.style.display = 'none';
+            if (formSuccess) formSuccess.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

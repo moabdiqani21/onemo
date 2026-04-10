@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support | ONEMO Manufacturing Company</title>
+    <meta name="description"
+        content="ONEMO Support – Get instant help from our AI assistant or browse common topics about orders, shipping, returns and more.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
+    
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span class="logo-main">ONEMO</span>
+                <span class="logo-sub">Manufacturing Company</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="gallery">Gallery</a></li>
+                <li><a href="contact">Contact</a></li>
+                <li><a href="support" class="active">Support</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/">Home</a>
+        <a href="about">About</a>
+        <a href="gallery">Gallery</a>
+        <a href="contact">Contact</a>
+        <a href="support">Support</a>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="page-hero-bg"></div>
+        <div class="page-hero-content">
+            <p class="page-hero-eyebrow">AI-Powered · Instant Help · 24/7</p>
+            <h1 class="page-hero-title">SUPPORT</h1>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-ticker">
+        <div class="marquee-track">
+            <span>24/7 SUPPORT</span><span class="dot">◆</span>
+            <span>AI ASSISTANT</span><span class="dot">◆</span>
+            <span>ORDERS</span><span class="dot">◆</span>
+            <span>SHIPPING</span><span class="dot">◆</span>
+            <span>RETURNS</span><span class="dot">◆</span>
+            <span>ALWAYS HERE</span><span class="dot">◆</span>
+            <span>ONEMO</span><span class="dot">◆</span>
+        </div>
+    </div>
+
+    <!-- SUPPORT LAYOUT -->
+    <section class="support-layout">
+        <div class="section-container">
+
+            <!-- Intro Header -->
+            <div class="section-header reveal" style="margin-bottom: 60px;">
+                <p class="section-eyebrow">We've Got You</p>
+                <h2 class="section-title">How Can We <span class="outline-text">Help?</span></h2>
+            </div>
+
+            <div class="support-grid">
+
+                <!-- LEFT: Topic Cards -->
+                <div class="support-topics reveal-left">
+
+                    <!-- Live status -->
+                    <div class="support-status">
+                        <div class="status-dot"></div>
+                        <p class="status-text">AI assistant is <strong>online</strong> — Average response time:
+                            <strong>instant</strong>
+                        </p>
+                    </div>
+
+                    <h3>Browse Topics</h3>
+                    <div class="topic-grid">
+                        <button class="topic-card" onclick="askBot('How do I track my order?')">
+                            <i class="fas fa-truck"></i>
+                            <h4>Track Order</h4>
+                            <p>Check your delivery status and tracking information.</p>
+                        </button>
+                        <button class="topic-card" onclick="askBot('What is your return and exchange policy?')">
+                            <i class="fas fa-exchange-alt"></i>
+                            <h4>Returns & Exchanges</h4>
+                            <p>Learn about our return window and exchange process.</p>
+                        </button>
+                        <button class="topic-card" onclick="askBot('What sizes do you offer?')">
+                            <i class="fas fa-ruler"></i>
+                            <h4>Sizing Guide</h4>
+                            <p>Find your perfect fit with our size recommendations.</p>
+                        </button>
+                        <button class="topic-card" onclick="askBot('How do I collaborate with ONEMO?')">
+                            <i class="fas fa-handshake"></i>
+                            <h4>Collaborations</h4>
+                            <p>Work with ONEMO on creative projects and drops.</p>
+                        </button>
+                        <button class="topic-card" onclick="askBot('Do you ship internationally from Istanbul?')">
+                            <i class="fas fa-globe"></i>
+                            <h4>International Shipping</h4>
+                            <p>Worldwide delivery from Istanbul, Türkiye.</p>
+                        </button>
+                        <button class="topic-card" onclick="askBot('When is the next drop?')">
+                            <i class="fas fa-fire"></i>
+                            <h4>Upcoming Drops</h4>
+                            <p>Get the latest info on limited edition releases.</p>
+                        </button>
+                    </div>
+
+                    <!-- Contact fallback -->
+                    <div
+                        style="background: var(--card-bg); border: 1px solid var(--border); padding: 25px; margin-top: 10px;">
+                        <p
+                            style="font-family: var(--font-ui); font-size: 0.75rem; color: var(--gray); line-height: 1.7; margin-bottom: 15px;">
+                            Still need help? Our team in Istanbul is available via email.
+                        </p>
+                        <a href="contact.html" class="btn-secondary"
+                            style="display: inline-flex; font-size: 0.7rem; padding: 12px 24px;">
+                            <i class="fas fa-envelope" style="margin-right: 8px;"></i> Email Us
+                        </a>
+                    </div>
+                </div>
+
+                <!-- RIGHT: AI Chatbot -->
+                <div class="chatbot-wrapper reveal-right">
+
+                    <div class="chatbot-header">
+                        <div class="chatbot-avatar">AI</div>
+                        <div class="chatbot-info">
+                            <h4>ONEMO Assistant</h4>
+                            <span>Online now</span>
+                        </div>
+                        <div
+                            style="margin-left: auto; font-family: var(--font-ui); font-size: 0.6rem; color: var(--gray); letter-spacing: 1px; text-transform: uppercase;">
+                            AI Powered</div>
+                    </div>
+
+                    <div class="chatbot-messages" id="chatMessages">
+                        <!-- Welcome message -->
+                        <div class="chat-msg bot">
+                            <div class="chat-avatar">AI</div>
+                            <div class="chat-bubble">
+                                Hey! 👋 I'm the ONEMO AI assistant. I can help you with orders, shipping, sizing,
+                                returns, and everything else about our Istanbul drops.<br><br>
+                                What can I help you with today?
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Replies -->
+                    <div class="quick-replies" id="quickReplies">
+                        <button class="quick-reply-btn" onclick="askBot('Track my order')">📦 Track order</button>
+                        <button class="quick-reply-btn" onclick="askBot('Return policy')">↩️ Returns</button>
+                        <button class="quick-reply-btn" onclick="askBot('Shipping info')">✈️ Shipping</button>
+                        <button class="quick-reply-btn" onclick="askBot('When is the next drop?')">🔥 Next drop</button>
+                        <button class="quick-reply-btn" onclick="askBot('Sizing guide')">📏 Sizing</button>
+                    </div>
+
+                    <!-- Input -->
+                    <div class="chatbot-input-area">
+                        <input type="text" class="chat-input" id="chatInput" placeholder="Ask anything about ONEMO..."
+                            maxlength="300">
+                        <button class="chat-send-btn" id="chatSendBtn" onclick="sendMessage()" title="Send">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <div class="newsletter-section">
+        <div class="section-container">
+            <h2>STAY IN THE LOOP</h2>
+            <p>Get early access to drops, support updates, and exclusive offers from Istanbul.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">JOIN</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo-main">ONEMO</div>
+                    <div class="logo-sub">Manufacturing Company</div>
+                    <p>Born and raised in Istanbul, ONEMO represents the raw energy of urban Türkiye.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/onemotextile?igsh=MW5yazVsczliZG1wcQ%3D%3D&utm_source=qr"
+                            class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="about">About Us</a></li>
+                        <li><a href="gallery">Gallery</a></li>
+                        <li><a href="contact">Contact</a></li>
+                        <li><a href="support">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="contact">Techpack Making &amp; Web Designing</a></li>
+                        <li><a href="contact">Sampling &amp; Manufacturing</a></li>
+                        <li><a href="contact">Creative direction &amp; premium photoshoot</a></li>
+                        <li><a href="contact">Brand &amp; Web Development</a></li>
+                        <li><a href="contact">Global Shipping</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Onemoclu6@gmail.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+90 552 778 58 51</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Istanbul, Turkey</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 ONEMO. All rights reserved. Istanbul, Türkiye.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Shipping</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast -->
+    <div id="toastEl" class="toast-alert" style="display:none;"></div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // ============================================================
+        //  ONEMO AI CHATBOT (LIVE GEMINI API)
+        // ============================================================
+
+
+        async function fetchGeminiResponse(userMsg) {
+            try {
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ userMsg: userMsg, version: '2.5' })
+                });
+
+                if (!response.ok) throw new Error("API Error");
+
+                const data = await response.json();
+                if (data && data.response) {
+                    return data.response.replace(/\n/g, '<br>');
+                }
+            } catch (err) {
+                console.error('API Route Error:', err);
+                return "Our AI is taking a quick break, but our Istanbul team is ready! Email us at <a href='mailto:Onemoclu6@gmail.com' style='color:var(--accent)'>Onemoclu6@gmail.com</a>.";
+            }
+            return "Could not process request. Please email Onemoclu6@gmail.com.";
+        }
+
+        function appendMessage(text, sender = 'bot') {
+            const messages = document.getElementById('chatMessages');
+            const div = document.createElement('div');
+            div.className = `chat-msg ${sender}`;
+            div.innerHTML = `
+        <div class="chat-avatar">${sender === 'bot' ? 'AI' : '<i class="fas fa-user"></i>'}</div>
+        <div class="chat-bubble">${text}</div>
+      `;
+            messages.appendChild(div);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function showTyping() {
+            const messages = document.getElementById('chatMessages');
+            const div = document.createElement('div');
+            div.className = 'chat-msg bot';
+            div.id = 'typingMsg';
+            div.innerHTML = `
+        <div class="chat-avatar">AI</div>
+        <div class="typing-indicator">
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+        </div>
+      `;
+            messages.appendChild(div);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function hideTyping() {
+            const t = document.getElementById('typingMsg');
+            if (t) t.remove();
+        }
+
+        function askBot(msg) {
+            appendMessage(msg, 'user');
+            processBot(msg);
+        }
+
+        async function processBot(userMsg) {
+            showTyping();
+            try {
+                const response = await fetchGeminiResponse(userMsg);
+                hideTyping();
+                appendMessage(response, 'bot');
+            } catch (err) {
+                hideTyping();
+                appendMessage("Oops, I lost connection. Our team is available at Onemoclu6@gmail.com!", 'bot');
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const msg = input.value.trim();
+            if (!msg) return;
+            input.value = '';
+            askBot(msg);
+        }
+
+        // Enter key to send
+        document.getElementById('chatInput').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+    </script>
+</body>
+
+</html>
