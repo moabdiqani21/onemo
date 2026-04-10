@@ -18,3 +18,5 @@ Update 9 - Refactor CSS in module 9
 
 Update 10 - Improve responsive design of module 10 
 
+Update 11 - Add tests for module 11 
+
