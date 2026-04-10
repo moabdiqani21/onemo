@@ -2,80 +2,190 @@
 
 The ONEMO platform is engineered as a decoupled, hybrid architecture combining a static frontend with a serverless backend. This ensures maximum page delivery speed while retaining dynamic data processing capabilities.
 
-## High-Level Overview
+---
 
-1. **Client Tier (Frontend):** Vanilla web technologies served statically.
-2. **Compute Tier (Backend API):** Serverless architecture acting as middleware for AI interactions.
-3. **Third-Party Integrations:** LLM Providers and Email delivery systems.
+## 1. High-Level System Overview
+
+```mermaid
+graph TD
+    User["👤 User / Browser"]
+
+    subgraph Frontend["Frontend (Static HTML/CSS/JS)"]
+        Index["index.html"]
+        About["about.html"]
+        Gallery["gallery.html"]
+        Contact["contact.html"]
+        Support["support.html + Chat UI"]
+    end
+
+    subgraph Backend["Backend"]
+        direction TB
+        API["⚡ /api/chat.js\nServerless Function"]
+        Env[".env\nAPI Key Store"]
+    end
+
+    subgraph Integrations["Third-Party Integrations"]
+        Gemini["🤖 Google Gemini API\n(LLM)"]
+        FormSubmit["📧 FormSubmit\n(Email Delivery)"]
+    end
+
+    User -->|"Navigate pages"| Frontend
+    Support -->|"POST /api/chat"| API
+    API -->|"Read key"| Env
+    API -->|"Prompt + Key"| Gemini
+    Gemini -->|"AI Response"| API
+    API -->|"JSON Response"| Support
+    Contact -->|"HTML Form POST"| FormSubmit
+    FormSubmit -->|"Email"| Admin["📬 Admin Email\nOnemoclu6@gmail.com"]
+```
 
 ---
 
-## 1. Frontend Architecture
+## 2. AI Chatbot Data Flow
 
-The frontend is purposefully built without heavy frameworks (like React or Vue) to achieve optimal Core Web Vitals. It utilizes an event-driven Vanilla JavaScript model.
+```mermaid
+sequenceDiagram
+    participant U as 👤 User
+    participant FE as support.html (JS)
+    participant API as /api/chat.js
+    participant ENV as .env File
+    participant G as Google Gemini API
 
-- **Routing:** Handled via multi-page HTML documents (`index.html`, `about.html`, `gallery.html`, etc.).
-- **Styling (`css/style.css`):** Utilizes CSS-Grid and Flexbox extensively. Custom CSS variables (CSS root) are used for theming (typography, primary colors) ensuring strict design consistency.
-- **Interactions (`js/main.js`):** Uses the `IntersectionObserver` API heavily for scroll-based reveal animations, minimizing main-thread blocking operations. 
-
-## 2. Backend & API Architecture
-
-The dynamic capabilities of the site are isolated within the `/api/` directory.
-
-### Production (Vercel Serverless)
-In a production cloud environment, the `vercel.json` file dictates that the application acts as a standard static site, while any requests sent to `/api/*` are intercepted by **Vercel Edge/Serverless Functions**.
-- `api/chat.js` is the primary handler. It is a secure, server-side Node.js environment.
-- **Security:** This abstraction ensures that sensitive credentials, specifically `GEMINI_API_KEY`, are securely retained on the server and never exposed to the client's browser.
-
-### Development (Express Node.js)
-To avoid the friction of installing proprietary cloud CLIs, a custom Node.js Express server (`server.js`) handles local development:
-1. Emulates the Vercel static routing using `express.static()`.
-2. Intercepts `POST` requests to `/api/chat` and manually invokes the `chatHandler` function imported directly from the `api/chat.js` module.
-3. Injects environment variables from the local `.env` file using the `dotenv` package.
-
-## 3. Data Flow & Integrations
-
-### AI Chatbot Flow
-1. User types a message in the UI on `support.html`.
-2. Frontend JavaScript captures the string and fires an asynchronous `fetch` `POST` request with a JSON payload to `/api/chat`.
-3. The serverless function receives the payload, grabs the `GEMINI_API_KEY` from the system environment, and formulates a strict, brand-aware prompt instructing the AI on how to respond.
-4. The serverless function makes its own external `POST` request to the Google Gemini API.
-5. Google Gemini returns the natural language response to the Vercel server.
-6. The Vercel server standardizes the JSON response and pipes it back to the client.
-7. Frontend JavaScript creates a DOM element and injects the AI's response into the chat UI.
-
-### Contact Pipeline
-A backend-less approach is used for immediate customer contact forms via FormSubmit:
-1. User submits the form on `contact.html`.
-2. Form action `POST`s directly to `https://formsubmit.co/`.
-3. FormSubmit processes the form inputs and forwards the structured entry to the registered admin email (`Onemoclu6@gmail.com`).
+    U->>FE: Types message, clicks Send
+    FE->>FE: Appends "User" bubble to DOM
+    FE->>API: POST /api/chat<br/>{ userMsg, version }
+    API->>ENV: Reads GEMINI_API_KEY
+    API->>API: Constructs brand-aware prompt
+    API->>G: POST generateContent<br/>{ prompt, config }
+    G-->>API: 200 OK — AI response text
+    API-->>FE: 200 OK — { response: "..." }
+    FE->>FE: Renders "ONEMO" chat bubble with HTML
+    FE->>U: Displays final AI reply
+```
 
 ---
 
-## 4. Directory Structure Map
+## 3. Local vs Production Routing
 
-```text
-/ (Root)
-│
-├── server.js             # Local Dev REST Server (Express)
-├── package.json          # Node dependency configuration
-├── vercel.json           # Cloud deployment routing rules
-├── .env                  # Secret variable storage
-│
-├── index.html            # Core landing entrypoint
-├── about.html            # Static route
-├── contact.html          # Static route
-├── gallery.html          # Static route
-├── support.html          # Static route with Chat UI
-│
-├── /api
-│   └── chat.js           # Serverless Node.js Route Handler
-│
-├── /css
-│   └── style.css         # Global Stylesheet
-│
-├── /js
-│   └── main.js           # Frontend DOM/Event logic
-│
-└── /GALLERY              # Image Asset Directory
+```mermaid
+graph LR
+    subgraph Local["💻 Local Development"]
+        direction TB
+        NPM["npm start"]
+        Express["server.js\n(Express.js)"]
+        StaticLocal["Static Files\n(HTML/CSS/JS)"]
+        APILocal["/api/chat handler\n(imported module)"]
+        NPM --> Express
+        Express -->|"express.static()"| StaticLocal
+        Express -->|"app.all('/api/chat')"| APILocal
+    end
+
+    subgraph Production["☁️ Production (Vercel)"]
+        direction TB
+        VEdge["Vercel Edge Network"]
+        StaticCDN["Static Assets\n(CDN Cached)"]
+        Serverless["Serverless Function\n/api/chat.js"]
+        VEdge -->|"Static routes"| StaticCDN
+        VEdge -->|"/api/* routes"| Serverless
+    end
+
+    Browser["🌐 Browser"] --> Local
+    Browser --> Production
+```
+
+---
+
+## 4. Directory Structure
+
+```mermaid
+graph TD
+    Root["📁 / (Root)"]
+
+    Root --> ServerJS["📄 server.js\nLocal Dev Server"]
+    Root --> PackageJSON["📄 package.json\nNPM Config"]
+    Root --> VercelJSON["📄 vercel.json\nCloud Routing Rules"]
+    Root --> DotEnv["🔒 .env\nSecret API Keys"]
+    Root --> ReadmeMD["📄 README.md"]
+    Root --> ArchMD["📄 architecture.md"]
+
+    Root --> PagesGroup["📄 HTML Pages"]
+    PagesGroup --> IndexHTML["index.html\n(Landing Page)"]
+    PagesGroup --> AboutHTML["about.html"]
+    PagesGroup --> GalleryHTML["gallery.html"]
+    PagesGroup --> ContactHTML["contact.html"]
+    PagesGroup --> SupportHTML["support.html\n(Chat UI)"]
+
+    Root --> APIDir["📁 /api"]
+    APIDir --> ChatJS["chat.js\nAI Route Handler"]
+
+    Root --> CSSDir["📁 /css"]
+    CSSDir --> StyleCSS["style.css\nGlobal Stylesheet"]
+
+    Root --> JSDir["📁 /js"]
+    JSDir --> MainJS["main.js\nFrontend Logic"]
+
+    Root --> GalleryDir["📁 /GALLERY"]
+    GalleryDir --> Images["🖼️ PIC1–7.jpeg"]
+```
+
+---
+
+## 5. Frontend Page Architecture
+
+```mermaid
+graph LR
+    Index["🏠 index.html\nHero · Lookbook\nManufacturing · Newsletter"]
+    About["📖 about.html\nBrand Story\nIstanbul Heritage"]
+    Gallery["🖼️ gallery.html\nPhoto Grid\nLightbox Overlay"]
+    Contact["✉️ contact.html\nForm · FAQ\nFormSubmit Integration"]
+    Support["🤖 support.html\nAI Chatbot\nHelp Center"]
+
+    SharedCSS["🎨 css/style.css\nDesign System\nCSS Variables · Animations"]
+    SharedJS["⚙️ js/main.js\nIntersectionObserver\nCursor · Scroll FX"]
+
+    Index & About & Gallery & Contact & Support -->|"imports"| SharedCSS
+    Index & About & Gallery & Contact & Support -->|"imports"| SharedJS
+```
+
+---
+
+## 6. Tech Stack Overview
+
+```mermaid
+mindmap
+  root((ONEMO Stack))
+    Frontend
+      HTML5
+        Semantic Markup
+        Multi-page Routing
+      CSS3
+        Custom Properties
+        Grid & Flexbox
+        Keyframe Animations
+      Vanilla JS
+        IntersectionObserver
+        Fetch API
+        DOM Manipulation
+      Google Fonts
+        Playfair Display
+        Inter
+    Backend
+      Node.js
+        server.js Local Dev
+        api/chat.js Handler
+      Express.js
+        Static Serving
+        API Routing
+      dotenv
+        Environment Variables
+    Cloud
+      Vercel
+        CDN Static Hosting
+        Serverless Functions
+    Integrations
+      Google Gemini API
+        gemini-1.5-flash
+        gemini-2.5-flash
+      FormSubmit
+        Email Delivery
 ```
