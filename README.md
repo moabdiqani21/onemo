@@ -15,6 +15,9 @@ Rather than relying on heavy front-end frameworks, the platform is built leverag
 - **FormSubmit Backend:** Headless email integration for B2B contact and factory inquiries without the need for a dedicated mail server.
 - **Local Express Stand-in:** A custom Node.js Express wrapper allows developers to simulate the Vercel serverless environment locally without requiring cloud authentication or proprietary CLI tools.
 
+> [!NOTE]
+> *For a comprehensive teardown of the application's data flow, serverless API connections, and full system structure, please refer to the **[System Architecture Documentation](architecture.md)***.
+
 ## Running the Project Locally
 
 Because the project relies on server-side logic for the AI chatbot to function while keeping API keys secure, it requires a local server.
