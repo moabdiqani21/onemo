@@ -14,3 +14,5 @@ Update 7 - Update layout for module 7
 
 Update 8 - Optimize loading of module 8 
 
+Update 9 - Refactor CSS in module 9 
+
