@@ -6,3 +6,5 @@ Update 3 - Refactor CSS in module 3
 
 Update 4 - Improve responsive design of module 4 
 
+Update 5 - Add tests for module 5 
+
