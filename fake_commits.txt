@@ -50,3 +50,5 @@ Update 25 - Update layout for module 25
 
 Update 26 - Optimize loading of module 26 
 
+Update 27 - Refactor CSS in module 27 
+
