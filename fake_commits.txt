@@ -52,3 +52,5 @@ Update 26 - Optimize loading of module 26
 
 Update 27 - Refactor CSS in module 27 
 
+Update 28 - Improve responsive design of module 28 
+
