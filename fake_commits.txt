@@ -12,3 +12,5 @@ Update 6 - Fix UI glitch in module 6
 
 Update 7 - Update layout for module 7 
 
+Update 8 - Optimize loading of module 8 
+
