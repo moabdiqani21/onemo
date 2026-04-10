@@ -4,3 +4,5 @@ Update 2 - Optimize loading of module 2
 
 Update 3 - Refactor CSS in module 3 
 
+Update 4 - Improve responsive design of module 4 
+
