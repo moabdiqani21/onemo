@@ -54,3 +54,5 @@ Update 27 - Refactor CSS in module 27
 
 Update 28 - Improve responsive design of module 28 
 
+Update 29 - Add tests for module 29 
+
