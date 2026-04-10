@@ -40,3 +40,5 @@ Update 20 - Optimize loading of module 20
 
 Update 21 - Refactor CSS in module 21 
 
+Update 22 - Improve responsive design of module 22 
+
