@@ -48,3 +48,5 @@ Update 24 - Fix UI glitch in module 24
 
 Update 25 - Update layout for module 25 
 
+Update 26 - Optimize loading of module 26 
+
