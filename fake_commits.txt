@@ -1,2 +1,4 @@
 Update 1 - Update layout for module 1 
 
+Update 2 - Optimize loading of module 2 
+
