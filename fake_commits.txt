@@ -26,3 +26,5 @@ Update 13 - Update layout for module 13
 
 Update 14 - Optimize loading of module 14 
 
+Update 15 - Refactor CSS in module 15 
+
