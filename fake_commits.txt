@@ -34,3 +34,5 @@ Update 17 - Add tests for module 17
 
 Update 18 - Fix UI glitch in module 18 
 
+Update 19 - Update layout for module 19 
+
