@@ -20,3 +20,5 @@ Update 10 - Improve responsive design of module 10
 
 Update 11 - Add tests for module 11 
 
+Update 12 - Fix UI glitch in module 12 
+
