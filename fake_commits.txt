@@ -30,3 +30,5 @@ Update 15 - Refactor CSS in module 15
 
 Update 16 - Improve responsive design of module 16 
 
+Update 17 - Add tests for module 17 
+
