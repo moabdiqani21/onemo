@@ -16,3 +16,5 @@ Update 8 - Optimize loading of module 8
 
 Update 9 - Refactor CSS in module 9 
 
+Update 10 - Improve responsive design of module 10 
+
