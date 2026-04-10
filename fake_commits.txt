@@ -56,3 +56,5 @@ Update 28 - Improve responsive design of module 28
 
 Update 29 - Add tests for module 29 
 
+Update 30 - Fix UI glitch in module 30 
+
