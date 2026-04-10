@@ -8,3 +8,5 @@ Update 4 - Improve responsive design of module 4
 
 Update 5 - Add tests for module 5 
 
+Update 6 - Fix UI glitch in module 6 
+
