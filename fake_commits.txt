@@ -36,3 +36,5 @@ Update 18 - Fix UI glitch in module 18
 
 Update 19 - Update layout for module 19 
 
+Update 20 - Optimize loading of module 20 
+
